@@ -1,0 +1,44 @@
+export const flashcardsService = {
+
+  getCategory: async (axiosInstance) => {
+    const response = await axiosInstance.get("/category-content/");
+    return response?.data;
+  },
+
+
+  getAllDecks: async (axiosInstance,deckId) => {
+    const response = await axiosInstance.get(`/category/${deckId}/decks/`);
+    return response?.data;
+  },
+
+
+  getDeckDetails: async (axiosInstance, deckId) => {
+    const response = await axiosInstance.get(`/deck/${deckId}/`);
+    return response?.data;
+  },
+
+  
+
+  getDeckSubCategoriesDetails: async (axiosInstance, subCatId) => {
+    const response = await axiosInstance.get(`/subcategory/${subCatId}/`);
+    return response?.data;
+  },
+
+
+  toggleFavoriteDeck: async (axiosInstance, deckId) => {
+    const response = await axiosInstance.post(`/deck/${deckId}/favorite/`);
+    return response?.data;
+  },
+  getFavoriteDecks: async (axiosInstance) => {
+    const response = await axiosInstance.get("/favorite-decks/");
+    return response?.data;
+  },
+  getProgress: async (axiosInstance) => {
+    const response = await axiosInstance.get("/falscard-progress/");
+    return response?.data;
+  },
+  submitAnswer: async (axiosInstance, payload) => {
+    const response = await axiosInstance.post("/answer-submit/", payload);
+    return response?.data;
+  },
+};

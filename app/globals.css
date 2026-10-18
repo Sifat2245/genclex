@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@import "tailwindcss";
+
+@theme inline {
+  /* ─── Primary Brand Colors ─────────────────────────────── */
+  --color-primary: #2c5f8d;
+  --color-primary-50: #eef4f9;
+  --color-primary-100: #d4e2f0;
+  --color-primary-200: #aecce5;
+  --color-primary-300: #7bafd4;
+  --color-primary-400: #4d92c0;
+  --color-primary-500: #2c5f8d;
+  --color-primary-600: #234d73;
+  --color-primary-700: #1c3d5c;
+  --color-primary-800: #162f47;
+  --color-primary-900: #0f2031;
+
+  /* ─── Accent Colors ───────────────────────────────────── */
+  --color-accent-coral: #e14564;
+  --color-accent-coral-50: #fdeef1;
+  --color-accent-coral-100: #f9d4dc;
+  --color-accent-coral-200: #f4a9b9;
+  --color-accent-coral-300: #ee7d96;
+  --color-accent-coral-400: #e85273;
+  --color-accent-coral-500: #e14564;
+
+  --color-accent-amber: #d97706;
+  --color-accent-amber-50: #fef5e7;
+  --color-accent-amber-100: #fde3b8;
+  --color-accent-amber-200: #fbd189;
+  --color-accent-amber-300: #f9bf5a;
+  --color-accent-amber-400: #f7ad2b;
+  --color-accent-amber-500: #d97706;
+
+  --color-accent-teal: #0d9488;
+  --color-accent-teal-50: #edfafa;
+  --color-accent-teal-100: #c8eeed;
+  --color-accent-teal-200: #a1e0de;
+  --color-accent-teal-300: #5bb9b4;
+  --color-accent-teal-400: #2da39d;
+  --color-accent-teal-500: #0d9488;
+
+  --color-accent-violet: #7c3aed;
+  --color-accent-violet-50: #f5f3ff;
+  --color-accent-violet-100: #ede9fe;
+  --color-accent-violet-200: #ddd6fe;
+  --color-accent-violet-300: #c4b5fd;
+  --color-accent-violet-400: #a78bfa;
+  --color-accent-violet-500: #7c3aed;
+
+  /* ─── Semantic Colors ─────────────────────────────────── */
+  --color-success: #059669;
+  --color-success-50: #f0fdf6;
+  --color-success-100: #d1fae5;
+  --color-warning: #d97706;
+  --color-warning-50: #fefce8;
+  --color-warning-100: #fef9c3;
+  --color-error: #dc2626;
+  --color-error-50: #fef2f2;
+  --color-error-100: #fee2e2;
+  --color-info: #0284c7;
+  --color-info-50: #f0f9ff;
+  --color-info-100: #e0f2fe;
+
+  /* ─── Surface & Background ────────────────────────────── */
+  --color-surface: #f6f8fa;
+  --color-surface-card: #ffffff;
+  --color-surface-hover: #f0f3f7;
+  --color-border: #e2e5ea;
+  --color-border-light: #eef1f5;
+
+  /* ─── Text Colors ─────────────────────────────────────── */
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-tertiary: #9ca3af;
+  --color-text-disabled: #d1d5db;
+  --color-text-on-primary: #ffffff;
+
+  /* ─── Fonts ────────────────────────────────────────────── */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Dashboard Fixed Header Positioning */
+@utility dashboard-header-expanded {
+  left: 0;
+  @media (min-width: 1024px) {
+    left: 16rem;
+    width: calc(100% - 16rem);
+  }
+}
+
+@utility dashboard-header-collapsed {
+  left: 0;
+  @media (min-width: 1024px) {
+    left: 4rem;
+    width: calc(100% - 4rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard-header-expanded {
+    left: 16rem !important;
+    width: calc(100% - 16rem) !important;
+  }
+  .dashboard-header-collapsed {
+    left: 4rem !important;
+    width: calc(100% - 4rem) !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .dashboard-header-expanded,
+  .dashboard-header-collapsed {
+    left: 0 !important;
+    width: 100% !important;
+  }
+}
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Note: sidebar scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Scrollbar track (background) */
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  /* light gray */
+}
+
+/* Scrollbar thumb (draggable part) */
+::-webkit-scrollbar-thumb {
+  background-color: #2c5f8d;
+  /* blue */
+  border-radius: 6px;
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2d70aa;
+}
+
+/* Note: auth divider */
+.ant-divider-inner-text {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  color: #525252 !important;
+}
+
+/* Note: custom steps progressbar */
+.custom-steps .ant-steps-item-finish .ant-steps-item-icon {
+  background-color: #3e6288;
+  border-color: #3e6288;
+}
+
+.custom-steps .ant-steps-item-process .ant-steps-item-icon {
+  background-color: #3e6288;
+  border-color: #3e6288;
+}
+
+.custom-steps .ant-steps-item-title {
+  font-weight: 500;
+}
+
+/* Note: custom select */
+.ant-select.ant-select-outlined:not(.ant-select-disabled).ant-select-focused {
+  box-shadow: none !important;
+  border: none;
+}
+
+
+/* Note: react-flow attribution */
+.react-flow__attribution a {
+  display: none;
+}
+
+/* ─── Formatted AI Message Styles ──────────────────────── */
+
+/* Ordered lists: numbered badges */
+.formatted-message ol {
+  counter-reset: md-list;
+}
+
+.formatted-message ol>li {
+  counter-increment: md-list;
+}
+
+.formatted-message ol>li>span:first-child {
+  /* Replace the bullet dot with a number for ordered lists */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #2c5f8d15;
+  color: #2c5f8d;
+  font-size: 11px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.formatted-message ol>li>span:first-child::before {
+  content: counter(md-list);
+}
+
+/* Hide the bullet dot inside ordered lists (it becomes a number badge) */
+.formatted-message ol>li>span:first-child>* {
+  display: none;
+}
+
+/* Spacing resets inside message bubbles */
+.formatted-message> :first-child {
+  margin-top: 0 !important;
+}
+
+.formatted-message> :last-child {
+  margin-bottom: 0 !important;
+}
